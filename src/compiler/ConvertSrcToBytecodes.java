@@ -5,11 +5,9 @@ import java.io.*;
 public class ConvertSrcToBytecodes {
 
     private String srcfilepath;
-//    private String bytefilepath;
 
     public ConvertSrcToBytecodes(String srcfilepath) {
         this.srcfilepath = srcfilepath;
-//        this.bytefilepath = bytefilepath;
     }
 
     /**
@@ -18,7 +16,6 @@ public class ConvertSrcToBytecodes {
      * @return BufferedReader
      */
     private BufferedReader readSrc() {
-//        File filename = new File(this.srcfilepath);
         try {
             FileReader reader = new FileReader(this.srcfilepath);
             return new BufferedReader(reader);
@@ -39,7 +36,6 @@ public class ConvertSrcToBytecodes {
         String line = "";
         for (int i = 0; i < strlist.length; i++) {
 
-//            line += Integer.toBinaryString(strlist[i]) + " ";
             //补齐8位
             String new_line = Integer.toBinaryString(strlist[i]);
             if (new_line.length() != 8) {
@@ -56,7 +52,6 @@ public class ConvertSrcToBytecodes {
 
     /**
      * 将命令和参数转换为字节码
-     *
      * @param str
      * @return byte
      */
@@ -133,10 +128,10 @@ public class ConvertSrcToBytecodes {
 
     }
 
-    public static void main(String arg[]) {
+//    public static void main(String arg[]) {
 //        ConvertSrcToBytecodes con = new ConvertSrcToBytecodes("test.txt");
 //        con.convert();
 
-    }
+//    }
 
 }

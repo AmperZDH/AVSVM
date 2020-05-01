@@ -1,6 +1,5 @@
 package engine;
 
-import com.sun.codemodel.internal.JArray;
 import compiler.ConvertSrcToBytecodes;
 import loader.LoadBytecodes;
 
@@ -15,7 +14,6 @@ public class Engine {
             System.out.println("编译启动");
             codefilename = srcTocode();
             System.out.println("编译完成");
-//            System.out.println(codefilename);
         } catch (Exception e) {
             System.out.println("ERROR编译失败!!");
         }
@@ -31,7 +29,6 @@ public class Engine {
             System.out.println("指令执行");
             String command = "";
             while (!command.equals("HALT")) {
-//                System.out.println("?????");
                 command = this.loadBytecodes.getPCommand();
                 parseCommand(command);
                 System.out.println(this.loadBytecodes.sp + "---" + command + this.loadBytecodes.stack.toString());
@@ -53,7 +50,6 @@ public class Engine {
         File file = new File("./");
         File[] files_list = file.listFiles();
         String srcfilename = "";
-//        String codefilename = "";
 
         //寻找字节码文件
         for (int i = 0; i < files_list.length; i++) {
@@ -98,14 +94,12 @@ public class Engine {
                 this.loadBytecodes.sp += 1;
                 this.loadBytecodes.pc += 1;
                 break;
-//                return null;
 
             case "POP":
                 top_value = this.loadBytecodes.stack.pop();
                 this.loadBytecodes.sp -= 1;
                 this.loadBytecodes.pc += 1;
                 break;
-//                return top_value;
 
             case "DUP":
                 top_value = this.loadBytecodes.stack.get(this.loadBytecodes.sp);
@@ -113,7 +107,6 @@ public class Engine {
                 this.loadBytecodes.sp += 1;
                 this.loadBytecodes.pc += 1;
                 break;
-//                return null;
 
             case "SWAP":
                 top_value = this.loadBytecodes.stack.pop();
@@ -122,7 +115,6 @@ public class Engine {
                 this.loadBytecodes.stack.push(next_top_value);
                 this.loadBytecodes.pc += 1;
                 break;
-//                return null;
 
             case "ADD":
                 top_value = this.loadBytecodes.stack.pop();
@@ -132,7 +124,6 @@ public class Engine {
                 this.loadBytecodes.sp -= 1;
                 this.loadBytecodes.pc += 1;
                 break;
-//                return null;
 
             case "SUB":
                 top_value = this.loadBytecodes.stack.pop();
@@ -142,38 +133,35 @@ public class Engine {
                 this.loadBytecodes.sp -= 1;
                 this.loadBytecodes.pc += 1;
                 break;
-//                return null;
 
             case "IFEQ":
                 top_value = this.loadBytecodes.stack.pop();
                 this.loadBytecodes.sp -= 1;
                 if (Integer.parseInt(top_value) == 0) {
                     this.loadBytecodes.pc += Integer.parseInt(value);
+                    this.loadBytecodes.pc += 1;
                 } else {
                     this.loadBytecodes.pc += 1;
                 }
                 break;
-//                return null;
 
             case "IFNE":
                 top_value = this.loadBytecodes.stack.pop();
                 this.loadBytecodes.sp -= 1;
                 if (Integer.parseInt(top_value) != 0) {
                     this.loadBytecodes.pc += Integer.parseInt(value);
+                    this.loadBytecodes.pc += 1;
                 } else {
                     this.loadBytecodes.pc += 1;
                 }
                 break;
-//                return null;
 
             case "NOP":
                 this.loadBytecodes.pc += 1;
                 break;
-//                return null;
-//            case "HALT":
+
 
         }
-//        return null;
     }
 
 }
