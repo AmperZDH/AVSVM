@@ -2,7 +2,7 @@
 ## A very simple virtual machine impelement by Java
 ## 【 如果你觉得没毛病，不要忘记点个Star (ง •̀_•́)ง 】
 
-##### 帝都某七星酒店附属实践实验
+##### 帝都某七星酒店附属SCHOOL实践实验
 
 ##### 基本按照老师给的文档开发
 
