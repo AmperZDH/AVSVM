@@ -7,7 +7,6 @@ import java.io.File;
 
 public class Engine {
     private LoadBytecodes loadBytecodes;
-
     public Engine() {
         String codefilename = "";
         try {
@@ -28,10 +27,10 @@ public class Engine {
             while (!command.equals("HALT")) {
                 command = this.loadBytecodes.getPCommand();
                 parseCommand(command);
-                System.out.println(this.loadBytecodes.sp  + command + this.loadBytecodes.stack.toString());
+                System.out.println(this.loadBytecodes.sp  +" "+ command);
             }
             String result = this.loadBytecodes.stack.toString();
-            System.out.println("end\n" + result);
+            System.out.println("From AmberZDH" + result);
         } catch (Exception e) {
             System.out.println("ERROR!");
         }

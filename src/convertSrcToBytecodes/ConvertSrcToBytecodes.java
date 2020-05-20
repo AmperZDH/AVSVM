@@ -25,11 +25,11 @@ public class ConvertSrcToBytecodes {
         String line = "";
         for (int i = 0; i < strlist.length; i++) {
             String new_line = Integer.toBinaryString(strlist[i]);
-            if (new_line.length() != 8) {
-                for (int j = 0; j <= (8 - new_line.length()); j++) {
-                    new_line = "0" + new_line;
-                }
-            }
+//            if (new_line.length() != 8) {
+//                for (int j = 0; j <= (8 - new_line.length()); j++) {
+//                    new_line = "0" + new_line;
+//                }
+//            }
             line = line + new_line + " ";
         }
 
