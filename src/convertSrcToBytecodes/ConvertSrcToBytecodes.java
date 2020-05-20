@@ -1,4 +1,4 @@
-package compiler;
+package convertSrcToBytecodes;
 
 import java.io.*;
 

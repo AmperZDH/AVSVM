@@ -1,6 +1,6 @@
 package engine;
 
-import compiler.ConvertSrcToBytecodes;
+import convertSrcToBytecodes.ConvertSrcToBytecodes;
 import loader.LoadBytecodes;
 
 import java.io.File;
@@ -28,7 +28,7 @@ public class Engine {
             while (!command.equals("HALT")) {
                 command = this.loadBytecodes.getPCommand();
                 parseCommand(command);
-                System.out.println(this.loadBytecodes.sp + "---" + command + this.loadBytecodes.stack.toString());
+                System.out.println(this.loadBytecodes.sp  + command + this.loadBytecodes.stack.toString());
             }
             String result = this.loadBytecodes.stack.toString();
             System.out.println("end\n" + result);
