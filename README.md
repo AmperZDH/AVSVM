@@ -1,6 +1,6 @@
 # AVSVM
 ## A very simple virtual machine impelement by Java
-## 【 如果你觉得没毛病，不要忘记点个Star (ง •̀_•́)ง 】
+## 【 极极极极极简单版本,无词法语法分析 】
 ##### 运行后报错自行填空
 
 ##### 帝都某七星酒店附属SCHOOL实践实验
